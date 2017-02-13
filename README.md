@@ -10,8 +10,8 @@ Users send alarms, like tweets.
 * ~~Newest at top alarms~~
     * Optional up-vote ranking algorithm
 * ~~Alarm validation caps only~~
-* API
-    * use Handshake API
+* ~API~
+    * ~use Handshake API~
     * take speed into account
 
 -------------------

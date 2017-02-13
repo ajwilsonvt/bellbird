@@ -1,3 +1,6 @@
+require 'net/http'
+require 'json'
+
 class AlarmsController < ApplicationController
   before_action :set_alarm, only: [:show, :edit, :update, :destroy]
 
@@ -30,11 +33,23 @@ class AlarmsController < ApplicationController
       if @alarm.save
         format.html { redirect_to @alarm, notice: 'Alarm was successfully created.' }
         format.json { render :show, status: :created, location: @alarm }
+        post_request
       else
         format.html { render :new }
         format.json { render json: @alarm.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def post_request
+    uri = URI('http://handshake-bellbird.herokuapp.com/push')
+    http = Net::HTTP.new(uri.host, uri.port)
+    req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
+    req.body = {id: @alarm.id}.to_json
+    res = http.request(req)
+    puts "response #{res.body}"
+  rescue => e
+    puts "failed #{e}"
   end
 
   # PATCH/PUT /alarms/1

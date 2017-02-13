@@ -1,5 +1,5 @@
 class Alarm < ApplicationRecord
-  # rails generate scaffold Alarm content:text user_id:integer
+  # rails generate scaffold Alarm content:text
   has_many :upvotes, dependent: :destroy
 
   #belongs_to :user

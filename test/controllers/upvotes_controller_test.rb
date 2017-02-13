@@ -1,3 +1,4 @@
+=begin
 require 'test_helper'
 
 class UpvotesControllerTest < ActionDispatch::IntegrationTest
@@ -46,3 +47,4 @@ class UpvotesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to upvotes_url
   end
 end
+=end
