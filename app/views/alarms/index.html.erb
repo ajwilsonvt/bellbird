@@ -1,0 +1,19 @@
+<%= link_to 'Create Alarm', new_alarm_path %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Bellbird</h1>
+
+<table>
+  <% @alarms.each do |alarm| %>
+    <tr>
+      <td><%= alarm.content %></td>
+      <td><%= alarm.created_at %></td>
+      <td><%= pluralize(alarm.upvotes.count, "vote") %></td>
+      <td><%= button_to '+1', upvote_alarm_path(alarm), method: :post %></td>
+    </tr>
+    <% end %>
+</table>
+
+
+

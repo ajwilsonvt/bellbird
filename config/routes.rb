@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  resources :alarms do
+    member do
+      post 'upvote'
+    end
+  end
 
-  get 'pages/help'
-
-  root 'pages#home'
+  root 'alarms#index'
 end
