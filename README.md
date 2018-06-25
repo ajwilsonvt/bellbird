@@ -1,6 +1,7 @@
 # Bellbird
 
 https://wilson-bellbird.herokuapp.com/
+
 Users send alarms, like tweets.
 
 ## Todo
@@ -15,9 +16,9 @@ Users send alarms, like tweets.
     * take speed into account
 * Use TDD approach
 
--------------------
+-----
 
-## Specifications
+## Specs
 * Ruby version 2.3.3
 
 * Rails 5.0.1
