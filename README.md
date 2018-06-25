@@ -16,8 +16,6 @@ Users send alarms, like tweets.
     * take speed into account
 * Use TDD approach
 
------
-
 ## Specs
 * Ruby version 2.3.3
 
